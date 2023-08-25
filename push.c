@@ -4,6 +4,7 @@
  *
  * @stack: a pointer point to stack
  * @data: the data to be pushed
+ * @line_number: tracker of lines
  *
  * Return: nothing
  */
