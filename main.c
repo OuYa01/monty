@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 		}
 		else if (strcmp(choice, "pint") == 0)
 		{
-			printf("%d\n", peek(stack));
+			printf("%d\n", peek(stack, line_number));
 		}
 		else if (strcmp(choice, "pop") == 0)
 		{
