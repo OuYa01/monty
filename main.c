@@ -60,6 +60,10 @@ int main(int argc, char *argv[])
 		{
 			print(&stack, line_number);
 		}
+		else if (strcmp(choice, "pint") == 0)
+		{
+			printf("%d\n", peek(stack));
+		}
 		else
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, choice);
