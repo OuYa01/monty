@@ -20,8 +20,8 @@ void push(stack_t **stack, int data, unsigned int line_number)
 
 	if (newNode == NULL)
 	{
-		printf("stack overflow.");
-		exit(1);
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
 	}
 	newNode->n = data;
 	newNode->prev = NULL;
