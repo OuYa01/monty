@@ -38,7 +38,7 @@ typedef struct instruction_s
 
 
 void print(stack_t **stack, unsigned int line_number);
-void push(stack_t **stack, int data);
+void push(stack_t **stack, int data, unsigned int line_number);
 
 
 #endif

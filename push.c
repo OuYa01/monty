@@ -7,9 +7,15 @@
  *
  * Return: nothing
  */
-void push(stack_t **stack, int data)
+void push(stack_t **stack, int data, unsigned int line_number)
 {
 	stack_t *newNode = malloc(sizeof(stack_t));
+
+	if (!stack)
+	{
+		fprintf(stderr, "L%d: stack is NULL\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	if (newNode == NULL)
 	{

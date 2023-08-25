@@ -23,8 +23,13 @@ int main(void)
 	{
 		if (strcmp(choice, "push") == 0)
 		{
-			fscanf(file, "%d", &data);
-			push(&stack, data);
+			if (fscanf(file, "%d", &data) != 1)
+			{
+				printf("L%d: usage: push integer\n", line_number);
+				fclose(file);
+				return (EXIT_FAILURE);
+			}
+			push(&stack, data, line_number);
 		}
 		else if (strcmp(choice, "pall") == 0)
 		{
