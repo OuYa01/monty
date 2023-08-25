@@ -4,20 +4,31 @@
 /**
  * main - Entry point of the programme
  *
+ * @argc: counter of args
+ * @argv: args
+ *
  * Return: 0 if scc
  */
-int main(void)
+int main(int argc, char *argv[])
 {
 	stack_t *stack = NULL;
 	char choice[20];
 	int data;
 	unsigned int line_number = 1;
-	FILE *file = fopen("bytecodes/00.m", "r");
+	FILE *file;
+
+	if (argc != 2)
+	{
+		fprintf(stderr, "USAGE: monty file\n");
+		return (EXIT_FAILURE);
+	}
+
+	file = fopen(argv[1], "r");
 
 	if (file == NULL)
 	{
-		printf("Error");
-		return (1);
+		fprintf(stderr, "Error cant open file\n");
+		return (EXIT_FAILURE);
 	}
 	while (fscanf(file, "%s", choice) != EOF)
 	{
